@@ -52,6 +52,9 @@ public class ControllerServlet extends HttpServlet {
                 case "/update":
                     updateUser(request, response);
                     break;
+                case "/list":
+                    listUser(request, response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -65,7 +68,7 @@ public class ControllerServlet extends HttpServlet {
             throws SQLException, IOException, ServletException {
         System.out.println("I am in servlet");
         List<User> listOfUser = userDAO.listAllUsers();
-        System.out.println("List of users: " + listOfUser);
+        System.out.println("List of users: " + listOfUser.toString());
         request.setAttribute("listOfUser", listOfUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("UserList.jsp");
         dispatcher.forward(request, response);

@@ -98,4 +98,17 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", userId='" + userId + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", deptmsCode='" + deptmsCode + '\'' +
+                ", designation='" + designation + '\'' +
+                '}';
+    }
 }
